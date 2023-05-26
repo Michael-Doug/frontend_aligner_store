@@ -1,0 +1,76 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+  font-family: Arial, sans-serif;
+  background-color: #fff;
+}
+
+.container {
+  width: 100%;
+  margin: auto;
+  padding: 80px;
+  background-image: url("https://startups.com.br/wp-content/uploads/2021/10/SouSmile_divulgacao.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color:#2D2727
+}
+
+.container p {
+  margin-bottom: 40px;
+}
+
+.separate {
+  border-bottom: 1px solid black;
+  text-align: center;
+  margin: 80px auto;
+  width: 50%;
+}
+
+.content {
+  display: flex;
+  align-items: center;
+  margin-top: 40px;
+  padding: 20px;
+  background-color: #fff;
+}
+
+.content h2 {
+  color: gray;
+  margin-left: 300px;
+}
+
+.content p{
+  margin-left: 300px;
+  margin-right: 300px;
+  color:#454545
+}
+
+.content-son {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.content-son h1 {
+  color:gray
+}
+
+.content-son p {
+  color:#454545
+}
+
+.textos {
+  flex-grow: 1;
+  margin-left: 200px;
+  margin-right: 200px;
+}
+
+.content-son img {
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 120px;
+  width: 700px;
+  height: auto;
+}
+

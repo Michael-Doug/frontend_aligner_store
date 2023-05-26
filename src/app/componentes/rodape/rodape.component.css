@@ -1,0 +1,47 @@
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #d3d3d3;
+  margin-top: 120px;
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.contacts h3 {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.contacts p {
+  margin-top: 1px;
+}
+
+.contacts ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.contacts li {
+  margin-left: 10px;
+}
+
+.contacts li a img {
+  margin-top: 10px;
+  width: 25px;
+}
+
+.logo img {
+  width: 180px;
+  height: 60px;
+  display: flex;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}

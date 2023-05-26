@@ -1,0 +1,62 @@
+.user-area {
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ff9466;
+  border-radius: 5px;
+  text-align: center;
+  margin-top: 120px;
+  margin-bottom: 120px;
+}
+
+.user-area h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.user-area p {
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.user-area label {
+  display: block;
+  margin-bottom: 10px;
+}
+
+.user-area input {
+  display: block;
+  width: 95%;
+  padding: 10px;
+  border: 1px solid #ff9466;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+.user-area .forgot-password {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.user-area button {
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 10px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+.user-area button:hover {
+  background-color: #ff9466;
+}
+
+.user-area a {
+  color: #ff9466;
+  text-decoration: none;
+}
+
+.user-area a:hover {
+  text-decoration: underline;
+}

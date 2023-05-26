@@ -1,0 +1,47 @@
+header {
+  background-color: #f6f7f8;
+  color: #454545;
+  padding: 20px;
+}
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+section {
+  background-color: #fff4e0;
+  border: 1px solid #f6f7f8;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  padding: 20px;
+  width: calc(33% - 20px);
+}
+
+section h2 {
+  font-size: 24px;
+  margin-top: 0;
+  color: #454545;
+}
+
+section p {
+  margin-bottom: 10px;
+  color: #454545;
+}
+
+.comprar {
+  text-align: center;
+  background-color: #f5ea5a;
+  color: #454545;
+  display: inline-block;
+  padding: 10px;
+  border-radius: 20px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.comprar:hover {
+  background-color: #ff9466;
+}
