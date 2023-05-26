@@ -83,7 +83,7 @@ Melhorar a experiência de compra com recursos como cálculo automático de subt
 
 ## Backend
 
-O backend deste projeto está disponível no repositório backend_aligner_store (https://github.com/Michael-Doug/backend_aligner_store){:target="_blank"} no meu GitHub.</br> Certifique-se de visitar o repositório para obter mais informações sobre o código backend do projeto.
+O backend deste projeto está disponível no repositório backend_aligner_store <href = "https://github.com/Michael-Doug/backend_aligner_store" target="_blank">Backend</a> no meu GitHub.</br> Certifique-se de visitar o repositório para obter mais informações sobre o código backend do projeto.
 
 ## Contribuição
 
