@@ -1,8 +1,13 @@
 <div class="dialog-container">
   <div class="dialog-box">
-    <h2>Cadastrado com sucesso!</h2>
-    <p>Seu cadastro foi concluído com sucesso.</p>
-    <button routerLink="/Login" class="login-button">Faça seu login aqui</button>
+    @if (fromOrder()) {
+      <h2>Pedido confirmado!</h2>
+      <p>Recebemos seu pedido. Em breve nossa equipe entra em contato.</p>
+      <button routerLink="/Produto" class="login-button">Voltar aos produtos</button>
+    } @else {
+      <h2>Cadastrado com sucesso!</h2>
+      <p>Sua conta já está ativa e você está conectado.</p>
+      <button routerLink="/Produto" class="login-button">Ver produtos</button>
+    }
   </div>
 </div>
-

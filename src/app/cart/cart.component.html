@@ -1,0 +1,38 @@
+<div class="cart">
+  <h2>Seu pedido</h2>
+
+  @if (cart.items().length === 0) {
+    <p class="empty">Seu carrinho está vazio.</p>
+    <a routerLink="/Produto" class="comprar">Ver produtos</a>
+  } @else {
+    <p class="who">Comprando como <strong>{{ customerEmail }}</strong></p>
+
+    <ul class="lines">
+      @for (line of cart.items(); track line.product.id) {
+        <li>
+          <span class="name">{{ line.product.name }}</span>
+          <span class="quantity">{{ line.quantity }}x</span>
+          <span class="subtotal">{{ cart.subtotal(line) | currency: 'BRL' }}</span>
+          <button type="button" class="remove" (click)="cart.remove(line.product.id)" [attr.aria-label]="'Remover ' + line.product.name">×</button>
+        </li>
+      }
+    </ul>
+
+    <p class="total">Total <strong>{{ cart.total() | currency: 'BRL' }}</strong></p>
+
+    <label for="payment">Forma de pagamento</label>
+    <select id="payment" [ngModel]="selectedPaymentId()" (ngModelChange)="selectedPaymentId.set(+$event)">
+      @for (payment of payments(); track payment.id) {
+        <option [value]="payment.id">{{ payment.name }}</option>
+      }
+    </select>
+
+    @if (errorMessage()) {
+      <p class="form-error" role="alert">{{ errorMessage() }}</p>
+    }
+
+    <button type="button" class="comprar" (click)="checkout()" [disabled]="submitting()">
+      {{ submitting() ? 'Fechando...' : 'Finalizar pedido' }}
+    </button>
+  }
+</div>

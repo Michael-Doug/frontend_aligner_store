@@ -5,19 +5,20 @@ header {
 }
 
 main {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
   padding: 20px;
 }
 
 section {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
   background-color: #fff4e0;
   border: 1px solid #f6f7f8;
   border-radius: 10px;
-  margin-bottom: 20px;
   padding: 20px;
-  width: calc(33% - 20px);
 }
 
 section h2 {
@@ -44,4 +45,31 @@ section p {
 
 .comprar:hover {
   background-color: #ff9466;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: 700;
+  color: #ff9466;
+}
+
+.comprar {
+  border: none;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+section p {
+  flex-grow: 1;
+}
+
+.status {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: #454545;
+  padding: 40px 20px;
+}
+
+.status.error {
+  color: #d14343;
 }

@@ -56,3 +56,22 @@
 .btn:hover {
   background-color: #f6f7f8;
 }
+
+.field-error,
+.form-error {
+  display: block;
+  color: #d14343;
+  font-size: 0.85rem;
+  margin-top: 4px;
+  max-width: 300px;
+}
+
+select.form-control {
+  width: 322px;
+  background-color: #fff;
+}
+
+.btn[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
