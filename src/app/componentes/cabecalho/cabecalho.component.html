@@ -1,13 +1,29 @@
 <header>
-  <div class="logo" routerLink="/Home">
-    <img src="../../../assets/imagens/logo-sousmile-coral.png" alt="Logotipo da sousmile">
-  </div>
+  <a class="logo" routerLink="/Home">
+    <img src="/assets/imagens/logo-sousmile-coral.png" alt="Logotipo da sousmile">
+  </a>
   <nav>
     <ul>
-      <li><a href="/QuemSomos">Quem Somos</a></li>
-      <li><a href="/OndeEstamos">Onde Estamos</a></li>
-      <li><a (click)="createOrder()" >Produto</a></li>
-      <li><a href="/Login"><img src="..//../../assets/imagens/icone-login.png" alt="ícone login">Login</a></li>
+      <li><a routerLink="/QuemSomos">Quem Somos</a></li>
+      <li><a routerLink="/OndeEstamos">Onde Estamos</a></li>
+      <li><a routerLink="/Produto">Produtos</a></li>
+      <li>
+        <a routerLink="/Carrinho">
+          Carrinho
+          @if (cart.count() > 0) {
+            <span class="badge">{{ cart.count() }}</span>
+          }
+        </a>
+      </li>
+      @if (auth.isLoggedIn()) {
+        <li><button type="button" class="link" (click)="logout()">Sair</button></li>
+      } @else {
+        <li>
+          <a routerLink="/Login">
+            <img src="/assets/imagens/icone-login.png" alt="">Login
+          </a>
+        </li>
+      }
     </ul>
   </nav>
 </header>

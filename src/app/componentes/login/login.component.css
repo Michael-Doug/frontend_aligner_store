@@ -60,3 +60,15 @@
 .user-area a:hover {
   text-decoration: underline;
 }
+
+.field-error,
+.form-error {
+  color: #d14343;
+  font-size: 0.85rem;
+  margin: 4px 0 0;
+}
+
+button[disabled] {
+  opacity: 0.6;
+  cursor: not-allowed;
+}

@@ -1,22 +1,58 @@
 <div class="form-container">
   <h2>pré-avaliação virtual</h2>
   <p>descubra se o aparelho invisível é para você em uma conversa com nossa equipe de dentistas - não substitui a necessidade de fazer a avaliação presencial</p>
-  <form>
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
     <div class="form-group">
-      <input type="text" id="name" name="name" class="form-control" placeholder="Nome" [(ngModel)]="dados.name">
+      <input type="text" id="name" class="form-control" placeholder="Nome" formControlName="name">
+      @if (form.controls.name.touched && form.controls.name.invalid) {
+        <span class="field-error">Informe seu nome.</span>
+      }
     </div>
+
     <div class="form-group">
-      <input type="text" id="cpf" name="cpf" class="form-control" placeholder="CPF" [(ngModel)]="dados.cpf">
+      <input type="text" id="cpf" class="form-control" placeholder="CPF (só números)" formControlName="cpf" inputmode="numeric" maxlength="11">
+      @if (form.controls.cpf.touched && form.controls.cpf.invalid) {
+        <span class="field-error">O CPF tem 11 dígitos, sem pontos nem traço.</span>
+      }
     </div>
+
     <div class="form-group">
-      <input type="text" id="endereco" name="endereco" class="form-control" placeholder="Endereço" [(ngModel)]="dados.address">
+      <input type="text" id="address" class="form-control" placeholder="Endereço" formControlName="address">
     </div>
+
     <div class="form-group">
-      <input type="text" id="phone" name="telefone" class="form-control" placeholder="Telefone" [(ngModel)]="dados.phone">
+      <input type="tel" id="phone" class="form-control" placeholder="Telefone" formControlName="phone">
     </div>
+
     <div class="form-group">
-      <input type="text" id="email" name="email" class="form-control" placeholder="Email" [(ngModel)]="dados.email">
+      <input type="email" id="email" class="form-control" placeholder="Email" formControlName="email" autocomplete="email">
+      @if (form.controls.email.touched && form.controls.email.invalid) {
+        <span class="field-error">Informe um e-mail válido.</span>
+      }
     </div>
-    <button (click)="createClient()" type="submit" class="btn">Enviar</button>
+
+    <div class="form-group">
+      <input type="password" id="password" class="form-control" placeholder="Senha de acesso" formControlName="password" autocomplete="new-password">
+      @if (form.controls.password.touched && form.controls.password.invalid) {
+        <span class="field-error">A senha tem no mínimo 8 caracteres.</span>
+      }
+    </div>
+
+    <div class="form-group">
+      <select id="store" class="form-control" formControlName="store_id">
+        @for (store of stores(); track store.id) {
+          <option [value]="store.id">{{ store.name }}</option>
+        }
+      </select>
+    </div>
+
+    @if (errorMessage()) {
+      <p class="form-error" role="alert">{{ errorMessage() }}</p>
+    }
+
+    <button type="submit" class="btn" [disabled]="submitting()">
+      {{ submitting() ? 'Enviando...' : 'Enviar' }}
+    </button>
   </form>
 </div>

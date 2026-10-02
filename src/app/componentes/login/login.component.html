@@ -1,13 +1,28 @@
 <div class="user-area">
   <h2>Minha área</h2>
   <p>aqui você pode remarcar a avaliação, agendar consultas de acompanhamento e ver em qual etapa do tratamento você está</p>
-  <form action="#" method="POST">
+
+  <form [formGroup]="form" (ngSubmit)="submit()">
     <label for="email">Email</label>
-    <input type="email" id="email" name="email" required>
+    <input type="email" id="email" formControlName="email" autocomplete="email">
+    @if (form.controls.email.touched && form.controls.email.invalid) {
+      <span class="field-error">Informe um e-mail válido.</span>
+    }
+
     <label for="password">Senha:</label>
-    <input type="password" id="password" name="password" required>
-    <a href="#" class="forgot-password">Esqueceu a senha?</a>
-    <button routerLink="" type="submit">Entrar</button>
+    <input type="password" id="password" formControlName="password" autocomplete="current-password">
+    @if (form.controls.password.touched && form.controls.password.invalid) {
+      <span class="field-error">A senha tem no mínimo 8 caracteres.</span>
+    }
+
+    @if (errorMessage()) {
+      <p class="form-error" role="alert">{{ errorMessage() }}</p>
+    }
+
+    <button type="submit" [disabled]="submitting()">
+      {{ submitting() ? 'Entrando...' : 'Entrar' }}
+    </button>
   </form>
-  <p>Ainda não tem uma conta? <a href="/Cadastro">Crie uma agora!</a></p>
+
+  <p>Ainda não tem uma conta? <a routerLink="/Cadastro">Crie uma agora!</a></p>
 </div>
